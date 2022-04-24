@@ -1,5 +1,9 @@
 # Überauth Pipedrive
 
+[![Module Version](https://img.shields.io/hexpm/v/ueberauth_pipedrive.svg)](https://hex.pm/packages/ueberauth_pipedrive)
+[![Hex Docs](https://img.shields.io/badge/hex-docs-lightgreen.svg)](https://hexdocs.pm/ueberauth_pipedrive/)
+[![License](https://img.shields.io/hexpm/l/ueberauth_pipedrive.svg)](https://github.com/glibin/ueberauth_pipedrive/blob/main/LICENSE.md)
+
 > Pipedrive OAuth2 strategy for Überauth.
 
 ## Installation
