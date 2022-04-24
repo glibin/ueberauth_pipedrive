@@ -28,8 +28,10 @@ defmodule Ueberauth.Pipedrive.Mixfile do
     [
       {:ueberauth, "~> 0.7"},
       {:oauth2, "~> 1.0 or ~> 2.0"},
+      {:jason, "~> 1.3"},
       {:credo, "~> 0.8.10", only: [:dev, :test]},
-      {:ex_doc, ">= 0.24.2", only: :dev, runtime: false}
+      {:ex_doc, ">= 0.24.2", only: :dev, runtime: false},
+      {:mock, "~> 0.3", only: :test}
     ]
   end
 

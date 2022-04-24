@@ -4,10 +4,10 @@ defmodule Ueberauth.Strategy.Pipedrive do
   """
 
   use Ueberauth.Strategy,
-      default_scope: "",
-      uid_field: :id,
-      send_redirect_uri: true,
-      oauth2_module: Ueberauth.Strategy.Pipedrive.OAuth
+    default_scope: "",
+    uid_field: :id,
+    send_redirect_uri: true,
+    oauth2_module: Ueberauth.Strategy.Pipedrive.OAuth
 
   alias Ueberauth.Auth.Info
   alias Ueberauth.Auth.Credentials
@@ -99,9 +99,7 @@ defmodule Ueberauth.Strategy.Pipedrive do
       name: user["name"],
       email: user["email"],
       image: user["icon_url"],
-      urls: %{
-
-      }
+      urls: %{}
     }
   end
 
@@ -125,7 +123,10 @@ defmodule Ueberauth.Strategy.Pipedrive do
   defp fetch_user(conn, token) do
     conn = put_private(conn, :pipedrive_token, token)
     # Will be better with Elixir 1.3 with/else
-    case Ueberauth.Strategy.Pipedrive.OAuth.get(token, "#{token.other_params["api_domain"]}/v1/users/me") do
+    case Ueberauth.Strategy.Pipedrive.OAuth.get(
+           token,
+           "#{token.other_params["api_domain"]}/v1/users/me"
+         ) do
       {:ok, %OAuth2.Response{status_code: 401, body: _body}} ->
         set_errors!(conn, [error("token", "unauthorized")])
 
