@@ -29,7 +29,9 @@ defmodule Ueberauth.Strategy.Pipedrive.OAuth do
     opts = @defaults |> Keyword.merge(opts) |> Keyword.merge(config) |> resolve_values()
     json_library = Ueberauth.json_library()
 
-    OAuth2.Client.new(opts)
+    client = OAuth2.Client.new(opts)
+
+    client
     |> OAuth2.Client.put_serializer("application/json", json_library)
   end
 
